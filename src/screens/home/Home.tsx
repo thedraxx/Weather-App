@@ -1,31 +1,24 @@
 import React from 'react'
-import { ContainerImageInfo, ContainerNumberNameCity, ContainerWeather, ContainerWeekWeather, ImageWeather, TitleWeather, TitleWeatherNumber } from './style'
+import { ContainerWeather, TitleWelcome } from './style'
 import LinearGradient from 'react-native-linear-gradient'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
+import WidgetWeek from '../../components/UI/WidgetWeek/WidgetWeek'
+
 
 const Home = () => {
   return (
     <LinearGradient
-    colors={["#272a44", "#5936b4" ]}
-    style={styles.linearGradient}
+      colors={["#272a44", "#5936b4"]}
+      style={styles.linearGradient}
     >
-    <ContainerWeather>
-      
-      <ContainerWeekWeather>
-        <ContainerNumberNameCity>
-        <TitleWeather>Monday</TitleWeather>
-          <TitleWeatherNumber>30º</TitleWeatherNumber>
-          <TitleWeather>Montral,Canada</TitleWeather>
+      <TitleWelcome>
+        Week Weather! 
+      </TitleWelcome>
+      <ContainerWeather>
 
-        </ContainerNumberNameCity>
-        <ContainerImageInfo>
-        <ImageWeather source={require('../../../assets/sun.png')} />
-        <TitleWeather>Monday</TitleWeather>
-        </ContainerImageInfo>
+        <WidgetWeek />
 
-      </ContainerWeekWeather>
-
-    </ContainerWeather>
+      </ContainerWeather>
     </LinearGradient>
   )
 }
