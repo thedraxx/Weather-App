@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerWeather, TitleWelcome } from './style'
+import { ContainerTitleAndLoadMore, ContainerWeather, TitleLoadMore, TitleWelcome } from './style'
 import LinearGradient from 'react-native-linear-gradient'
 import { StyleSheet, Text } from 'react-native'
 import WidgetWeek from '../../components/UI/WidgetWeek/WidgetWeek'
@@ -8,12 +8,18 @@ import WidgetWeek from '../../components/UI/WidgetWeek/WidgetWeek'
 const Home = () => {
   return (
     <LinearGradient
-      colors={["#272a44", "#5936b4"]}
+      colors={["#f6f6f6", "#ffffff"]}
       style={styles.linearGradient}
     >
+      <ContainerTitleAndLoadMore>
       <TitleWelcome>
-        Week Weather! 
+        This week
       </TitleWelcome>
+      <TitleLoadMore>
+        Load More
+      </TitleLoadMore>
+      </ContainerTitleAndLoadMore>
+
       <ContainerWeather>
 
         <WidgetWeek />

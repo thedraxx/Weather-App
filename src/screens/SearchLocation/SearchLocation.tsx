@@ -1,12 +1,11 @@
 import React from 'react'
 import { Container, Title } from './style'
+import Search from '../../components/UI/Search/Search'
 
 const SearchLocation = () => {
   return (
     <Container>
-        <Title>
-            SearchLocation
-        </Title>
+          <Search />
     </Container>
   )
 }

@@ -1,10 +1,12 @@
+import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import Home from '../screens/home/Home';
-import React from 'react'
 import SearchLocation from '../screens/SearchLocation/SearchLocation';
 import { Colors } from '../utilities/colors';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Navigator from './Navigator';
+
+
 
 
 const Tab = createBottomTabNavigator();
@@ -26,8 +28,8 @@ const ButtomTabNavigator = () => {
                 }}
             >
                 <Tab.Screen
-                    name="Home"
-                    component={Home}
+                    name="Navigator"
+                    component={Navigator}
                     options={{ 
                         tabBarLabel: 'Home',
                         tabBarIcon: ({ color, size }) => (
@@ -37,7 +39,7 @@ const ButtomTabNavigator = () => {
                      }}
                 />
                 <Tab.Screen
-                    name="Settings"
+                    name="Search"
                     component={SearchLocation}
                     options={{ 
                         tabBarLabel: 'Search',
