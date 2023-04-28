@@ -6,8 +6,8 @@ import Detail from '../screens/Detail/Detail';
 import { Colors } from '../utilities/colors';
 
 export type RootStackParamList = {
-    Home: any;
-    Detail: any;
+  Home: any;
+  Detail: any;
 };
 
 
@@ -17,21 +17,27 @@ const Stack = createStackNavigator<RootStackParamList>();
 const Navigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen 
-      name="Detail" 
-      component={Detail} 
-      options={({ route }) => ({ 
-        headerTitle: "Weather Detail", 
-        headerBackTitle: "Back", 
-        headerTintColor: Colors.white,
-        headerStyle: {
-            backgroundColor: Colors.Cardpurple,  
-        },
-        headerTitleStyle: {
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={({ route }) => ({
+          headerShadowVisible: true,
+          headerShown: false,
+        })} />
+      <Stack.Screen
+        name="Detail"
+        component={Detail}
+        options={({ route }) => ({
+          headerTitle: "Weather Detail",
+          headerBackTitle: "Back",
+          headerTintColor: Colors.white,
+          headerStyle: {
+            backgroundColor: Colors.Cardpurple,
+          },
+          headerTitleStyle: {
             fontWeight: '200',
-        },
-    })}
+          },
+        })}
       />
     </Stack.Navigator>
   )
