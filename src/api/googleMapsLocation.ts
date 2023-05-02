@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const openWeather = axios.create({
+const googleMapsLocation = axios.create({
     baseURL: "https://maps.googleapis.com/maps/api/geocode/json?address=",
 });
 
-export default openWeather;
+export default googleMapsLocation;

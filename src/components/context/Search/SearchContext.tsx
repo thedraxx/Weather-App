@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { Location, Result } from '../../interface/IgoogleMaps';
+import { Result } from '../../../interface/IgoogleMaps';
 
 export interface SearchContextProps{
     search: Result[];

@@ -2,18 +2,14 @@ import styled from 'styled-components/native';
 import { Colors } from '../../../utilities/colors';
 
 export const ContainerWeekWeather = styled.View`
+    flex:1;
     align-items: center;
-    justify-content: center;
-    width: 90%;
-    height: 45%;
-    flex-direction: row;
+    justify-content: center;  
+    width: 100%;
+    height: 350px;
     background-color: ${Colors.orange};
-    padding:55px;
-    justify-content: space-between;
     border-radius: 30px;
-    margin-bottom: 20px;
-
-    
+    margin-bottom: 70px;
 `
 
 export const ContainerNumberNameCity = styled.View`
@@ -132,6 +128,11 @@ export const TitleDay = styled.Text`
 
 export const TitleWeatherNumber = styled.Text`
     color: ${Colors.white};
-    font-size: 70px;
+    font-size: 45px;
     font-weight: bold;
+`
+
+export const Footer = styled.View`
+
+
 `

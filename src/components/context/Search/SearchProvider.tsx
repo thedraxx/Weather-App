@@ -1,8 +1,8 @@
 import { useReducer, useState } from 'react';
 import { searchReducer } from './searchReducer';
 import { SearchContext } from './SearchContext';
-import openWeather from '../../api/openWeather';
-import { IgoogleMaps, Result } from '../../interface/IgoogleMaps';
+import { IgoogleMaps, Result } from '../../../interface/IgoogleMaps';
+import googleMapsLocation from '../../../api/googleMapsLocation';
 
 export interface searchState {
     search: Result[];
@@ -25,7 +25,7 @@ export const SearchProvider = ({ children }: Props) => {
 
         try {
             // TODO arreglar el process.env
-            const { data } = await openWeather<IgoogleMaps>(`${address}&key=AIzaSyDUVyTycGJzYSs9I7MBQWX4HgDXES6uaHU`)
+            const { data } = await googleMapsLocation<IgoogleMaps>(`${address}&key=AIzaSyDUVyTycGJzYSs9I7MBQWX4HgDXES6uaHU`)
 
             if (data.status === 'ZERO_RESULTS') {
                 return null

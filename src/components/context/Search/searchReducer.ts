@@ -1,4 +1,4 @@
-import { Location, Result } from "../../interface/IgoogleMaps";
+import { Result } from "../../../interface/IgoogleMaps";
 import { searchState } from "./SearchProvider";
 
 

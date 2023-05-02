@@ -2,10 +2,12 @@ import styled from 'styled-components/native';
 import { Colors } from '../../utilities/colors';
 
 export const ContainerWeather = styled.View`
-    align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
 `
 
 export const TitleWelcome  = styled.Text`
