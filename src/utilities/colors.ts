@@ -7,4 +7,6 @@ export const Colors = {
     tabColor: '#3A3A6A',
     orange: '#FFA500',
     Cardpurple: '#6E5BFA',
+    lightGray: '#F3F1FB',
+    lightDark: '#3A3A6A',
 }

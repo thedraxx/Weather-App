@@ -5,9 +5,9 @@ export const ContainerWeather = styled.View`
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
 `
 
 export const TitleWelcome  = styled.Text`

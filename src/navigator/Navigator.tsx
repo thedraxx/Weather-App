@@ -7,7 +7,11 @@ import { Colors } from '../utilities/colors';
 
 export type RootStackParamList = {
   Home: any;
-  Detail: any;
+  Detail: {
+    lat: number;
+    lon: number;
+  }
+
 };
 
 

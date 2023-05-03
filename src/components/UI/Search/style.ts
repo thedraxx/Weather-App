@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
+import { Colors } from '../../../utilities/colors';
 
 
 export const ContainerSearch = styled.View`
     width: 100%;
-    height: 50px;
     border-radius: 10px;
     background-color: #fff;
     padding: 0 20px;
@@ -12,10 +12,9 @@ export const ContainerSearch = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px #ccc;
+    margin-bottom: 20px;
 `
 
 
@@ -33,12 +32,29 @@ export const InputSearch = styled.TextInput`
 
 export const ContainerSearched = styled.View`
     width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const ButtonSearch = styled.TouchableOpacity`
+    width: 10%;
     height: 50px;
     border-radius: 10px;
-    background-color: #fff;
-    padding: 0 20px;
+    border:  1px solid #ccc;
+    background-color: ${Colors.Purple};
+    padding: 0 25px;
     font-size: 15px;
     font-weight: 400;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const TextCity = styled.Text`
+    font-size: 15px;
+    font-weight: 400;
+    color: ${Colors.lightDark};
+    margin-bottom: 10px;
+
 
 `

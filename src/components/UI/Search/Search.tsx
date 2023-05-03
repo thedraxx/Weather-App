@@ -1,20 +1,23 @@
 import React, { useContext } from 'react';
-import { ContainerSearch, ContainerSearched, InputSearch } from './style'
-import { TouchableOpacity, Text } from 'react-native';
+import { ContainerSearch, ContainerSearched, InputSearch, TextCity } from './style'
+import { TouchableOpacity } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { SearchContext } from '../../context/Search';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { CitiesWeatherContext } from '../../context/CitiesWeather';
-
 
 const Search = () => {
 
   const { handleSearch, address, setAddress, search } = useContext(SearchContext)
   const {addedCity} = useContext(CitiesWeatherContext)
 
+  const handleSubmit = (lat:number,lng:number) => {
+    setAddress('')
+    addedCity(lat, lng)
+  }
+
   return (
     <>
-
       <ContainerSearch>
         <InputSearch
           value={address}
@@ -22,7 +25,15 @@ const Search = () => {
           placeholder="Ingrese una dirección"
         />
         <TouchableOpacity onPress={handleSearch}>
-          <Icon name="search" size={20} color="#000" />
+          <Icon 
+          name="search" 
+          size={20} 
+          color="#f9f9f9" 
+          backgroundColor="#5936B4" 
+          borderRadius={150}
+          padding={13}
+          margin={5}
+          />
         </TouchableOpacity>
       </ContainerSearch>
 
@@ -33,9 +44,11 @@ const Search = () => {
             data={search}
             renderItem={({ item }) => (
               <TouchableOpacity
-                onPress={() => addedCity(item.geometry.location.lat, item.geometry.location.lng)}
+                onPress={
+                  () => handleSubmit(item.geometry.location.lat, item.geometry.location.lng) 
+                }
               >
-                <Text>{item.formatted_address}</Text>
+                <TextCity>{item.formatted_address}</TextCity>
               </TouchableOpacity>
             )}
           />

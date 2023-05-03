@@ -44,7 +44,10 @@ const WidgetWeek = () => {
 
                 <ContainerDetail>
                   <TouchableWithoutFeedback
-                    onPress={() => navigation.navigate('Detail')}
+                    onPress={() => navigation.navigate('Detail', {
+                      lat: item.item.coord.lat,
+                      lon: item.item.coord.lon,
+                    })}
                   >
                     <TitleViewDetail>
                       View
