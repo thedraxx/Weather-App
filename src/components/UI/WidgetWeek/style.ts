@@ -131,10 +131,10 @@ export const TitleWeatherCity = styled.Text`
 
 
 export const TitleDay = styled.Text`
-    color: ${Colors.black};
-    font-size: 25px;
-    font-weight: 300;
-  
+    color: ${Colors.white};
+    font-size: 20px;
+    font-weight: 500;
+
 `
 
 export const TitleWeatherNumber = styled.Text`

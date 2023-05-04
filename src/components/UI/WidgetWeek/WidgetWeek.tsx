@@ -14,16 +14,17 @@ const WidgetWeek = () => {
   return (
     <>
       {
-        Object.keys(ListOfCities).length === 0 ? 
+        ListOfCities.length === 0 || !ListOfCities   ? 
         <ContainerNothingToSee>
         <TitleDay>Nothing To See Here!</TitleDay>
         </ContainerNothingToSee>
-          :
+          :   
           <FlatList
             data={ListOfCities}
-            keyExtractor={() => Math.random().toString()}
+            keyExtractor={(item) => Math.random().toString()}
             showsVerticalScrollIndicator={false}
             renderItem={(item ) => (
+              
               <ContainerWeekWeather
                 temp={item.item.weather.map( 
                   (item) => item.main
