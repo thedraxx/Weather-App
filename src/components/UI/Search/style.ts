@@ -18,6 +18,7 @@ export const ContainerSearch = styled.View`
 `
 
 
+
 export const InputSearch = styled.TextInput`
     width: 90%;
     height: 50px;
@@ -37,24 +38,10 @@ export const ContainerSearched = styled.View`
     align-items: center;
 `
 
-export const ButtonSearch = styled.TouchableOpacity`
-    width: 10%;
-    height: 50px;
-    border-radius: 10px;
-    border:  1px solid #ccc;
-    background-color: ${Colors.Purple};
-    padding: 0 25px;
-    font-size: 15px;
-    font-weight: 400;
-    justify-content: center;
-    align-items: center;
-`
 
 export const TextCity = styled.Text`
     font-size: 15px;
     font-weight: 400;
     color: ${Colors.lightDark};
     margin-bottom: 10px;
-
-
 `

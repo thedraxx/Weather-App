@@ -21,8 +21,11 @@ export const SearchProvider = ({ children }: Props) => {
     const [state, dispatch] = useReducer(searchReducer, Search_INITIAL_STATE)
     const [address, setAddress] = useState('');
 
-    const handleSearch = async () => {
+    const clearSearch = () => {
+        dispatch({ type: '[UI] - clearSearch' })
+    }
 
+    const handleSearch = async () => {
         try {
             // TODO arreglar el process.env
             const { data } = await googleMapsLocation<IgoogleMaps>(`${address}&key=AIzaSyDUVyTycGJzYSs9I7MBQWX4HgDXES6uaHU`)
@@ -34,7 +37,6 @@ export const SearchProvider = ({ children }: Props) => {
             const datasResult:Result[] = data.results
 
             dispatch({ type: '[UI] - search', payload: datasResult })
-
             // setCoordinates({ lat, lng });
         } catch (error) {
             console.error(error);
@@ -47,6 +49,7 @@ export const SearchProvider = ({ children }: Props) => {
             address,
             handleSearch,
             setAddress,
+            clearSearch
 
         }}>
             {children}

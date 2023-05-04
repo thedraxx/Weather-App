@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
-import { ContainerDay, ContainerDetail, ContainerInfo, ContainerInfoWeatherCity, ContainerNumberNameCity, ContainerWeekWeather, Footer, TitleDay, TitleViewDetail, TitleWeather, TitleWeatherCity, TitleWeatherNumber } from './style'
+import React, { useContext} from 'react'
+import { BottomGoDetail, ContainerDay, ContainerDetail, ContainerInfo, ContainerInfoWeatherCity, ContainerNothingToSee, ContainerNumberNameCity, ContainerWeekWeather, TitleDay, TitleViewDetail, TitleWeather, TitleWeatherCity, TitleWeatherNumber } from './style'
 import { useNavigation } from '@react-navigation/native';
-import { FlatList, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { FlatList } from 'react-native-gesture-handler';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../navigator/Navigator';
 import { CitiesWeatherContext } from '../../context/CitiesWeather';
@@ -14,23 +14,28 @@ const WidgetWeek = () => {
   return (
     <>
       {
-        ListOfCities.length === 0 || !ListOfCities ? <TitleDay>Empty</TitleDay>
+        Object.keys(ListOfCities).length === 0 ? 
+        <ContainerNothingToSee>
+        <TitleDay>Nothing To See Here!</TitleDay>
+        </ContainerNothingToSee>
           :
           <FlatList
-            horizontal={false}
-            showsVerticalScrollIndicator={false}
             data={ListOfCities}
-            keyExtractor={(item) => item.id.toString()}
+            keyExtractor={() => Math.random().toString()}
+            showsVerticalScrollIndicator={false}
             renderItem={(item ) => (
-              <ContainerWeekWeather>
-                <ContainerNumberNameCity>
+              <ContainerWeekWeather
+                temp={item.item.weather.map( 
+                  (item) => item.main
+              )}
+              >
+                <ContainerNumberNameCity> 
                   <ContainerDay>
                     <TitleDay>Today</TitleDay>
                   </ContainerDay>
-
                   <ContainerInfo>
                     <TitleWeatherNumber>
-                      {item.item.main.temp}°</TitleWeatherNumber>
+                      {Math.round(item.item.main.temp)}°</TitleWeatherNumber>
                     <ContainerInfoWeatherCity>
                       <TitleWeather>
                         {item.item.weather.map( 
@@ -43,7 +48,7 @@ const WidgetWeek = () => {
                 </ContainerNumberNameCity>
 
                 <ContainerDetail>
-                  <TouchableWithoutFeedback
+                  <BottomGoDetail
                     onPress={() => navigation.navigate('Detail', {
                       lat: item.item.coord.lat,
                       lon: item.item.coord.lon,
@@ -52,11 +57,10 @@ const WidgetWeek = () => {
                     <TitleViewDetail>
                       View
                     </TitleViewDetail>
-                  </TouchableWithoutFeedback>
+                  </BottomGoDetail>
                 </ContainerDetail>
               </ContainerWeekWeather>
             )}
-            ListFooterComponent={() => <Footer />}
           />
       }
     </>

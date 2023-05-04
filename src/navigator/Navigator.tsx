@@ -33,6 +33,7 @@ const Navigator = () => {
         component={Detail}
         options={({ route }) => ({
           headerTitle: "Weather Detail",
+          headerShown: false,
           headerBackTitle: "Back",
           headerTintColor: Colors.white,
           headerStyle: {

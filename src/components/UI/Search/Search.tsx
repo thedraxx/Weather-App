@@ -5,15 +5,17 @@ import { FlatList } from 'react-native-gesture-handler';
 import { SearchContext } from '../../context/Search';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { CitiesWeatherContext } from '../../context/CitiesWeather';
+import { Colors } from '../../../utilities/colors';
 
 const Search = () => {
 
-  const { handleSearch, address, setAddress, search } = useContext(SearchContext)
+  const { handleSearch, address, setAddress, search,clearSearch } = useContext(SearchContext)
   const {addedCity} = useContext(CitiesWeatherContext)
 
   const handleSubmit = (lat:number,lng:number) => {
     setAddress('')
     addedCity(lat, lng)
+    clearSearch()
   }
 
   return (
@@ -29,10 +31,9 @@ const Search = () => {
           name="search" 
           size={20} 
           color="#f9f9f9" 
-          backgroundColor="#5936B4" 
-          borderRadius={150}
+          backgroundColor={Colors.tabColor} 
           padding={13}
-          margin={5}
+          margin={6}
           />
         </TouchableOpacity>
       </ContainerSearch>

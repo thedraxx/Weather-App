@@ -4,24 +4,35 @@ import { Colors } from '../../utilities/colors';
 export const BackgroundContainer = styled.View`
     width: 100%;
     height: 100%;
-    background-color: ${Colors.Cardpurple};
+    background-color: ${ (props: { temp: string; }) => props.temp[0]=== 'Clear' ? Colors.orange : Colors.LightPurple};
     align-items: center;
     justify-content: center;
 
 `;
 
+export const ContainerBackButton = styled.View`
+    width: 100%;
+    align-items: flex-start;
+    padding: 5px;
+`
+
+export const BottonGoBack = styled.TouchableOpacity`
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    align-items: center;
+`
 
 export const ContainerIcon = styled.View`
     width: 100%;
-    align-items: flex-end;
-    
+    align-items: center;
 `
 
 export const ContainerData = styled.View`
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 10px;
 `
 
 export const InfoWeather = styled.Text`
@@ -54,13 +65,14 @@ export const ContainerDetailInfo = styled.View`
     height: 20%;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    padding: 20px;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
     bottom: 0;
+    
     z-index: 1;
-    margin-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 
 `
 

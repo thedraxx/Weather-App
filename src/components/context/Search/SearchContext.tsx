@@ -7,6 +7,7 @@ export interface SearchContextProps{
     // Methods
     handleSearch: () => void;
     setAddress: (address: string) => void;
+    clearSearch: () => void;
 }
 
 export const SearchContext = createContext({} as SearchContextProps);

@@ -4,6 +4,7 @@ import { searchState } from "./SearchProvider";
 
 type searchActionType = 
   | {type: '[UI] - search', payload: Result[] }
+    | {type: '[UI] - clearSearch'}
 
 export const searchReducer = (state:searchState, action:searchActionType): searchState => {
     switch (action.type) {
@@ -13,6 +14,14 @@ export const searchReducer = (state:searchState, action:searchActionType): searc
                 ...state,
                 search: action.payload
             }
+
+        case '[UI] - clearSearch':
+            
+            return {
+                ...state,
+                search: []
+            }
+
 
         default:
             return state;
