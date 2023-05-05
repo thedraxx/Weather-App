@@ -21,7 +21,7 @@ const WidgetWeek = () => {
           :   
           <FlatList
             data={ListOfCities}
-            keyExtractor={(item) => Math.random().toString()}
+            keyExtractor={(item) => Date.now().toString()}
             showsVerticalScrollIndicator={false}
             renderItem={(item ) => (
               

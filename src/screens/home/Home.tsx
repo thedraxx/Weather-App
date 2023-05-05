@@ -13,7 +13,7 @@ const Home = () => {
     >
       <ContainerTitleAndLoadMore>
       <TitleWelcome>
-        This week
+        Weather Today
       </TitleWelcome>
       <TitleLoadMore>
         Load More

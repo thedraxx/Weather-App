@@ -16,7 +16,7 @@ export const ContainerWeekWeather = styled.View`
     justify-content: center;  
     width: 100%;
     height: 350px;
-    background-color: ${ (props: { temp: string; }) => props.temp[0]=== 'Clear' ? Colors.orange : Colors.LightPurple};
+    background-color: ${ (props: { temp: string; }) => props.temp[0]=== 'Clear' ? Colors.orange : props.temp[0]=== 'Rain' ? Colors.lightBlue : Colors.clouds };
     border-radius: 30px;
     margin-bottom: 70px;
 `

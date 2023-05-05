@@ -4,16 +4,20 @@ import { Colors } from '../../utilities/colors';
 export const BackgroundContainer = styled.View`
     width: 100%;
     height: 100%;
-    background-color: ${ (props: { temp: string; }) => props.temp[0]=== 'Clear' ? Colors.orange : Colors.LightPurple};
+    background-color: ${ (props: { temp: string; }) => props.temp[0]=== 'Clear' ? Colors.orange : props.temp[0]=== 'Rain' ? Colors.lightBlue : Colors.clouds };
     align-items: center;
     justify-content: center;
+    flex:1;
 
 `;
 
 export const ContainerBackButton = styled.View`
     width: 100%;
     align-items: flex-start;
-    padding: 5px;
+    padding: 0px;
+    margin-bottom: auto;
+    justify-content: space-between;
+    flex-direction: row;
 `
 
 export const BottonGoBack = styled.TouchableOpacity`

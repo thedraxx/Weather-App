@@ -7,6 +7,7 @@ export interface CitiesWeatherContextProps{
 
     addedCity: (lat: number, long: number) => void;
     handleIsSearching: (isSearching: boolean) => void;
+    removeCity: (lat: number, long: number) => void;
 }
 
 export const CitiesWeatherContext = createContext({} as CitiesWeatherContextProps);

@@ -2,19 +2,18 @@ import React, { useContext, useEffect, useState } from 'react'
 import { BackgroundContainer, ContainerBackButton, ContainerData, BottonGoBack, ContainerDetailInfo, ContainerHumidity, ContainerIcon, ContainerRain, ContainerWind, Day, DetailDay, InfoWeather, TextSubTitle, TextTitle } from './style'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IconFeather from 'react-native-vector-icons/Feather';
+import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RootStackParamList } from '../../navigator/Navigator';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import weatherMap from '../../api/weatherMap';
 import { IweatherMap } from '../../interface/IweatherMap';
 import { CitiesWeatherContext } from '../../components/context/CitiesWeather';
-import { TouchableHighlight } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 interface Props extends NativeStackScreenProps<RootStackParamList, 'Detail'> { }
 
 const Detail = ({ route }: Props) => {
   const [DetailCity, setDetailCity] = useState({} as IweatherMap)
-  const { ListOfCities } = useContext(CitiesWeatherContext)
+  const { ListOfCities,removeCity } = useContext(CitiesWeatherContext)
   const { lat, lon } = route.params;
   const Navigation  = useNavigation()
 
@@ -45,12 +44,23 @@ const Detail = ({ route }: Props) => {
               <BottonGoBack
                 onPress={() => Navigation.goBack()}
               >
-              <IconFeather name="arrow-left" size={45} color="white" />
+              <IconFeather name="arrow-left" size={42} color="white" />
+              </BottonGoBack>
+              
+              <BottonGoBack
+                onPress={() => removeCity(lat, lon)}
+              >
+              <IconMaterialCommunityIcons name="delete" size={42} color="white" />
               </BottonGoBack>
             </ContainerBackButton>
             <ContainerIcon>
               {
-                DetailCity.weather.map((item) => item.main === 'Clouds' ? <Icon name="cloud" size={220} color="white" /> : <Icon name="sun-o" size={220} color="white" />)
+                DetailCity.weather.map((item) => 
+                item.main === 'Clouds' 
+                ? <Icon name="cloud" size={170} color="white" />
+                : item.main === 'Rain'
+                ? <Icon name="tint" size={170} color="white" />
+                : <Icon name="sun-o" size={170} color="white" />)
               }
             </ContainerIcon>
             <ContainerData>
