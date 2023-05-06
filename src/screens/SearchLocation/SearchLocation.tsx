@@ -6,7 +6,9 @@ import ModalAlert from '../../components/UI/alert/ModalAlert';
 const SearchLocation = () => {
   return (
     <Container>
-      <ModalAlert />
+      <ModalAlert
+        text={"Weather Added"}
+      />
       <Search />
     </Container>
   )

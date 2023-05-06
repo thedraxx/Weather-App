@@ -4,8 +4,8 @@ import { CitiesWeatherState } from './';
 type CitiesWeatherStateType = 
     | {type: '[UI] - FETCHING_SEARCH', payload:boolean}
     | {type: '[UI] - ADD_CITY', payload:IweatherMap[]}
-    | {type: '[UI] - REMOVE_CITY', payload:any
-}
+    | {type: '[UI] - REMOVE_CITY', payload:any}
+    | {type: '[UI] - FETCHING_DELETE', payload:boolean}
 
 export const citiesWeatherReducer = (state:CitiesWeatherState, action:CitiesWeatherStateType): CitiesWeatherState => {
     switch (action.type) {
@@ -26,6 +26,15 @@ export const citiesWeatherReducer = (state:CitiesWeatherState, action:CitiesWeat
                 ...state,
                 ListOfCities: state.ListOfCities.filter((city) => city.coord.lat !== action.payload.lat && city.coord.lon !== action.payload.lon)
             }
+        
+        case '[UI] - FETCHING_DELETE':
+            return {
+                ...state,
+                isDeleting: action.payload
+            }
+
+
+        
 
         default:
             return state;

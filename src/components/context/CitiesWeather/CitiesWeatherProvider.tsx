@@ -6,11 +6,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export interface CitiesWeatherState {
     ListOfCities: IweatherMap[];
     isSearching: boolean;
+    isDeleting: boolean;
 }
 
 const CitiesWeather_INITIAL_STATE: CitiesWeatherState = {
     ListOfCities: [],
-    isSearching: false
+    isSearching: false,
+    isDeleting: false,
 };
 
 interface Props {
@@ -62,9 +64,12 @@ export const CitiesWeatherProvider = ({ children }: Props) => {
     }
 
     const removeCity = async (lat: number, long: number) => {
+        handleIsDeleting(false)
+
         state.ListOfCities.map((city, index) => {
             if (city.coord.lat === lat && city.coord.lon === long) {
                 dispatch({ type: '[UI] - REMOVE_CITY', payload: { lat, long } })
+                handleIsDeleting(true)
             }
         }
         )
@@ -74,12 +79,17 @@ export const CitiesWeatherProvider = ({ children }: Props) => {
         dispatch({ type: '[UI] - FETCHING_SEARCH', payload: isSearching })
     }
 
+    const handleIsDeleting = (isDeleting: boolean) => {
+        dispatch({ type: '[UI] - FETCHING_DELETE', payload: isDeleting })
+    }
+
     return (
         <CitiesWeatherContext.Provider value={{
             ...state,
             addedCity,
             handleIsSearching,
-            removeCity
+            removeCity,
+            handleIsDeleting
         }}>
             {children}
         </CitiesWeatherContext.Provider>

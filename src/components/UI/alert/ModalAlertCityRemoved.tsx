@@ -8,8 +8,8 @@ interface Props {
 }
 
 
-const ModalAlert = ({text}:Props) => {
-  const {handleIsSearching,isSearching} = useContext(CitiesWeatherContext)
+const ModalAlertCityRemoved = ({text}:Props) => {
+  const {handleIsDeleting,isDeleting} = useContext(CitiesWeatherContext)
 
 
   return (
@@ -17,12 +17,12 @@ const ModalAlert = ({text}:Props) => {
     <Modal
       animationType="slide"
       transparent={true}
-      visible={isSearching}>
+      visible={isDeleting}>
       <ContainerModal>
         <ContainerInfoModal>
           <TitleModal>{text}</TitleModal>
           <PressableButton
-            onPress={() => handleIsSearching(false)}>
+            onPress={() => handleIsDeleting(false)}>
             <TextButtonModal>Hide Message</TextButtonModal>
           </PressableButton>
         </ContainerInfoModal>
@@ -33,4 +33,4 @@ const ModalAlert = ({text}:Props) => {
 }
 
 
-export default ModalAlert
+export default ModalAlertCityRemoved
