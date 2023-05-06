@@ -2,17 +2,20 @@ import styled from 'styled-components/native';
 import { Colors } from '../../utilities/colors';
 
 export const ContainerWeather = styled.View`
-    align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex:1;
+    padding-top: 10px;
 `
 
 export const TitleWelcome  = styled.Text`
     color: ${Colors.black};
     font-size: 30px;
     font-weight: bold;
-
+    
 `
 
 export const TitleLoadMore  = styled.Text`
@@ -29,7 +32,4 @@ export const ContainerTitleAndLoadMore = styled.View`
     width: 100%;
     padding: 0 20px;
     margin-top: 20px;
-
-
-
 `

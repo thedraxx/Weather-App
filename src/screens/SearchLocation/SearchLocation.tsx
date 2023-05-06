@@ -1,13 +1,21 @@
-import React from 'react'
-import { Container, Title } from './style'
+import React from 'react';
+import { Container } from './style'
 import Search from '../../components/UI/Search/Search'
+import ModalAlert from '../../components/UI/alert/ModalAlert';
 
 const SearchLocation = () => {
   return (
     <Container>
-          <Search />
+      <ModalAlert
+        text={"Weather Added"}
+      />
+      <Search />
     </Container>
   )
 }
 
 export default SearchLocation
+
+
+
+

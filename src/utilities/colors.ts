@@ -6,5 +6,11 @@ export const Colors = {
     Purple: '#5936B4',
     tabColor: '#3A3A6A',
     orange: '#FFA500',
+    LightPurple: '#6E5BFA',
+    DarkPurple: '#5d47ff',
     Cardpurple: '#6E5BFA',
+    lightGray: '#F3F1FB',
+    lightDark: '#3A3A6A',
+    lightBlue: '#63aaff',
+    clouds: '#97c7ff',
 }

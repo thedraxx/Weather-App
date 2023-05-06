@@ -1,19 +1,24 @@
 import styled from 'styled-components/native';
 import { Colors } from '../../../utilities/colors';
 
-export const ContainerWeekWeather = styled.View`
+export const ContainerNothingToSee = styled.View`
+    flex:1;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    height: 45%;
-    flex-direction: row;
-    background-color: ${Colors.orange};
-    padding:55px;
-    justify-content: space-between;
-    border-radius: 30px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: ${Colors.white};
+`
 
-    
+export const ContainerWeekWeather = styled.View`
+    flex:1;
+    align-items: center;
+    justify-content: center;  
+    width: 100%;
+    height: 350px;
+    background-color: ${ (props: { temp: string; }) => props.temp[0]=== 'Clear' ? Colors.orange : props.temp[0]=== 'Rain' ? Colors.lightBlue : Colors.clouds };
+    border-radius: 30px;
+    margin-bottom: 70px;
 `
 
 export const ContainerNumberNameCity = styled.View`
@@ -45,9 +50,6 @@ export const ContainerInfo = styled.View`
     margin-top: 5px;
     margin-left: 5px;
 `
-
-
-
 
 export const ContainerImageInfo = styled.View`
     flex-direction: column;
@@ -84,20 +86,25 @@ export const ContainerDetail = styled.View`
     margin-bottom: 30px;
 `
 
+export const BottomGoDetail = styled.TouchableOpacity`
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255, 0.2);
+    border: 1px solid ${Colors.white};
+    
+`
+
 export const TitleViewDetail    = styled.Text`
     color: ${Colors.white};
     font-size: 20px;
     font-weight: 300;
     margin-left: 5px;
     margin-right: 5px;
-    border-radius: 50px;
-
     padding-left: 45px;
     padding-right: 45px;
     padding-top:10px;
     padding-bottom: 10px;
-    border: 1px solid ${Colors.white};
-
 `
 
 
@@ -125,13 +132,14 @@ export const TitleWeatherCity = styled.Text`
 
 export const TitleDay = styled.Text`
     color: ${Colors.white};
-    font-size: 13px;
-    font-weight: 300;
-  
+    font-size: 20px;
+    font-weight: 500;
+
 `
 
 export const TitleWeatherNumber = styled.Text`
     color: ${Colors.white};
-    font-size: 70px;
+    font-size: 45px;
     font-weight: bold;
 `
+
