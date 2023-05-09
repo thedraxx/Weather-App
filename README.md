@@ -1,4 +1,4 @@
-# React-Native RAppi - Challenge - Full Stack - IMPORTANT!!! - READ ME
+
 <h1 align="center"> Hello Everyone 🪐👋</h1>
 
 ## 🤖 About App:
