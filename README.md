@@ -1,16 +1,13 @@
-
+# React-Native RAppi - Challenge - Full Stack - IMPORTANT!!! - READ ME
 <h1 align="center"> Hello Everyone 🪐👋</h1>
 
 ## 🤖 About App:
-This is a Frontend Taxes Calculator made in Next 13
+This is a Frontend Personal-challenge using React Native
 
 ## 🎥 A little video of the App:
 
-https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/c5ab06aa-644b-4fca-ac1e-7114d3c41ddf
+https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/eba346c7-b007-4dca-8a4b-38dd50075617
 
-![Screenshot_1](https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/b292b309-317c-4481-9d64-28fa72606cc6)
-![2](https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/f2198742-c381-46af-a243-383925a01515)
-![Screenshot_2](https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/a68c83f4-7ae5-4201-bd3b-9d77ea178d83)
 
 <br> The app is made with the following technologies:</br>
 
@@ -19,22 +16,26 @@ https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/c5ab06aa-644b
 ```
  React: 18.2.0
 ```
-## ⚛️ Next
+## ⚛️ React Native:
 ```
-React Native: 13.4.4
+React Native: 0.71.6
 ```
-## ⚛️ Tailwind
+## ⚛️ react-native-vector-icons 
 ```
-styled-components: 3.3.2
+react-native-vector-icons: 9.2.0
+```
+## ⚛️ styled-components
+```
+styled-components: 5.3.9
+```
+## ⚛️ axios
+```
+axios: 1.3.5
 ```
 ## ✉️ Contact
-
 gmail: frankdevarg@gmail.com
-
 ## 🤔 Autor
-
 👤 **Francisco Cerrano**
-
 - Twitter: [@thedraxxworld](https://twitter.com/ThedraxxWorld)
 - Github: [thedraxx](https://github.com/thedraxx)
 - LinkedIn: [Francisco Isaac Cerrano](https://www.linkedin.com/in/iscodev/)
