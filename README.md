@@ -1,4 +1,4 @@
-# React-Native PersonalFlow - Challenge - Full Stack - IMPORTANT!!! - READ ME
+# React-Native Weather App - Full Stack
 <h1 align="center"> Hello Everyone 🪐👋</h1>
 
 ## 🤖 About App:
